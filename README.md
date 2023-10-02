@@ -8,15 +8,15 @@
 **Exercicio 6:**
 
 ## Tecnologias utilizadas
-<div><img src="https://img.shields.io/badge/-robot framework-black?style=for-the-badge&logo=robotframework&logoColor=white"></div> 
+<div><img src="https://img.shields.io/badge/-robot framework (v6.1.1)-black?style=for-the-badge&logo=robotframework&logoColor=white"></div> 
 
 **Download Link:** [Robot Framework Getting Started](https://robotframework.org/?tab=1#getting-started)
 
-<div><img src="https://img.shields.io/badge/-Selenium-grey?style=for-the-badge&logo=Selenium&logoColor=white"></div> 
+<div><img src="https://img.shields.io/badge/-Selenium (v5.1.3)-grey?style=for-the-badge&logo=Selenium&logoColor=white"></div> 
 
 **Instalador** pip install robotframework-seleniumlibrar
 
-<div><img src="https://img.shields.io/badge/-Chrome Web Drivre-blue?style=for-the-badge&logo=google-chrome&logoColor=white"></div> 
+<div><img src="https://img.shields.io/badge/-Chrome Web Drivre (117)-blue?style=for-the-badge&logo=google-chrome&logoColor=white"></div> 
 
 **Download Link:**
 [chromedriver-win64.zip](https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.132/win64/chromedriver-win64.zip)

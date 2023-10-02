@@ -4,7 +4,7 @@ Library    OperatingSystem
 Resource    kabum.resource.robot
 
 *** Test Cases ***
-Cenario de teste 1: Validar login incorreto
+Funcionalidade: Validar login incorreto
     [Tags]    Cenario1
     Abrir pagina
     Clicar Em login
@@ -15,7 +15,7 @@ Cenario de teste 1: Validar login incorreto
     A mensagem "E-mail, CPF, CNPJ ou senha incorretos" é igual a esperada
     Fechar o navegador
 
-Cenario de teste 2: Buscar por iphone
+Funcionalidade: Buscar por iphone
     [Tags]    Cenario2
     Abrir pagina
     Pesquisar por "iphone"
@@ -23,7 +23,7 @@ Cenario de teste 2: Buscar por iphone
     Verifica se lista de produtos relacionados e igual IPhone
     Fechar o navegador
     
-Cenario de teste 3: Validar carrinho
+Funcionalidade: Validar carrinho
     [Tags]    Cenario3
     Abrir pagina
     Selecionar o departamento
