@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    OperatingSystem
 
 *** Variables ***
 ${URL}               https://kabum.com.br

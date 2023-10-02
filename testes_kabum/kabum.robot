@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    OperatingSystem
 Resource    kabum.resource.robot
 
 *** Test Cases ***
