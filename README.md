@@ -14,7 +14,7 @@
 
 <div><img src="https://img.shields.io/badge/-Selenium-grey?style=for-the-badge&logo=Selenium&logoColor=white"></div> 
 
-**Instalador** pip install Selenium.Library
+**Instalador** pip install robotframework-seleniumlibrar
 
 <div><img src="https://img.shields.io/badge/-Chrome Web Drivre-blue?style=for-the-badge&logo=google-chrome&logoColor=white"></div> 
 
