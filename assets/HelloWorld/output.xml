@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.6.8 on win32)" generated="20230928 18:31:14.542" rpa="false" schemaversion="4">
+<suite id="s1" name="Hello World" source="C:\Users\Matheus Bonotto\Documents\Github\robotframework\hello_world.robot">
+<test id="s1-t1" name="First Test" line="5">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://google.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230928 18:31:14.849" level="INFO">Opening browser 'chrome' to base url 'http://google.com'.</msg>
+<status status="PASS" starttime="20230928 18:31:14.849" endtime="20230928 18:31:19.262"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@name='q']</arg>
+<arg>Hi Google</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230928 18:31:19.264" level="INFO">Typing text 'Hi Google' into text field '//*[@name='q']'.</msg>
+<status status="PASS" starttime="20230928 18:31:19.262" endtime="20230928 18:31:19.430"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230928 18:31:22.441" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230928 18:31:19.431" endtime="20230928 18:31:22.441"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230928 18:31:22.442" endtime="20230928 18:31:24.664"/>
+</kw>
+<status status="PASS" starttime="20230928 18:31:14.847" endtime="20230928 18:31:24.665"/>
+</test>
+<status status="PASS" starttime="20230928 18:31:14.544" endtime="20230928 18:31:24.667"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Hello World">Hello World</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
