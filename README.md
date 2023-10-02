@@ -22,6 +22,7 @@
 [chromedriver-win64.zip](https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.132/win64/chromedriver-win64.zip)
 
 - **Material de apoio:**
+  - [Selenium Commands Guide](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Element%20Should%20Contain)
   - [Robot Framework User Guide](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)
   - [YouTube Video](https://www.youtube.com/watch?v=xoQwtceO-eI)
 
