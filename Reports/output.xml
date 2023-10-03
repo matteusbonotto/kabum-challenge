@@ -1,66 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.6.8 on win32)" generated="20231002 12:58:20.456" rpa="false" schemaversion="4">
-<suite id="s1" name="Kabum" source="C:\Users\Matheus Bonotto\Documents\Github\robotframework\testes_kabum\kabum.robot">
-<test id="s1-t1" name="Cenario de teste 2: Buscar por iphone" line="17">
-<kw name="Abrir pagina" library="kabum.resource">
+<robot generator="Robot 6.1.1 (Python 3.6.8 on win32)" generated="20231002 22:44:12.271" rpa="false" schemaversion="4">
+<suite id="s1" name="Kabum" source="C:\Users\matteusbonotto\Documents\github\kabum-challenge\testes_kabum\kabum.robot">
+<test id="s1-t1" name="Funcionalidade: Validar login incorreto" line="11">
+<kw name="Abrir pagina" library="navegation.resource">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231002 12:58:20.902" level="INFO">Opening browser 'chrome' to base url 'https://kabum.com.br'.</msg>
-<status status="PASS" starttime="20231002 12:58:20.901" endtime="20231002 12:58:38.775"/>
+<msg timestamp="20231002 22:44:12.486" level="INFO">Opening browser 'chrome' to base url 'https://kabum.com.br'.</msg>
+<status status="PASS" starttime="20231002 22:44:12.486" endtime="20231002 22:44:19.854"/>
 </kw>
-<status status="PASS" starttime="20231002 12:58:20.900" endtime="20231002 12:58:38.776"/>
+<status status="PASS" starttime="20231002 22:44:12.484" endtime="20231002 22:44:19.854"/>
 </kw>
-<kw name="Pesquisar por &quot;iphone&quot;" library="kabum.resource" sourcename="Pesquisar por &quot;${produto}&quot;">
+<kw name="Clicar Em login" library="cenario1.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 22:44:19.858" level="INFO">Clicking element '//*[@id='linkLoginHeader']'.</msg>
+<status status="PASS" starttime="20231002 22:44:19.856" endtime="20231002 22:44:22.617"/>
+</kw>
+<status status="PASS" starttime="20231002 22:44:19.854" endtime="20231002 22:44:22.618"/>
+</kw>
+<kw name="Inserir usuario" library="cenario1.resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_user}</arg>
+<arg>teste@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231002 22:44:22.620" level="INFO">Typing text 'teste@teste.com' into text field '//*[@id='login']'.</msg>
+<status status="PASS" starttime="20231002 22:44:22.619" endtime="20231002 22:44:23.306"/>
+</kw>
+<status status="PASS" starttime="20231002 22:44:22.618" endtime="20231002 22:44:23.306"/>
+</kw>
+<kw name="Inserir senha" library="cenario1.resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_password}</arg>
+<arg>123456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231002 22:44:23.312" level="INFO">Typing text '123456' into text field '//*[@id='password']'.</msg>
+<status status="PASS" starttime="20231002 22:44:23.309" endtime="20231002 22:44:24.464"/>
+</kw>
+<status status="PASS" starttime="20231002 22:44:23.308" endtime="20231002 22:44:24.464"/>
+</kw>
+<kw name="Clicar em entrar" library="cenario1.resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_signin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231002 22:44:24.466" level="INFO">Clicking element '//*[@id='__next']/main/div/div/div/form/div[3]/button'.</msg>
+<status status="PASS" starttime="20231002 22:44:24.465" endtime="20231002 22:44:24.611"/>
+</kw>
+<status status="PASS" starttime="20231002 22:44:24.464" endtime="20231002 22:44:24.611"/>
+</kw>
+<kw name="Espere pela mensagem" library="cenario1.resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=${feedback_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231002 22:44:24.612" endtime="20231002 22:44:25.135"/>
+</kw>
+<status status="PASS" starttime="20231002 22:44:24.611" endtime="20231002 22:44:25.135"/>
+</kw>
+<kw name="A mensagem E-mail, CPF, CNPJ ou senha incorretos é igual a esperada" library="cenario1.resource" sourcename="A mensagem ${feedback} é igual a esperada">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=${feedback_login}</arg>
+<arg>${feedback}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20231002 22:44:25.160" level="INFO">Element 'xpath=//*[@id='__next']/main/div/div/div/form/div[3]/div/span/p' contains text 'E-mail, CPF, CNPJ ou senha incorretos'.</msg>
+<status status="PASS" starttime="20231002 22:44:25.136" endtime="20231002 22:44:25.160"/>
+</kw>
+<status status="PASS" starttime="20231002 22:44:25.136" endtime="20231002 22:44:25.160"/>
+</kw>
+<kw name="Fechar o navegador" library="navegation.resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231002 22:44:25.161" endtime="20231002 22:44:27.338"/>
+</kw>
+<status status="PASS" starttime="20231002 22:44:25.160" endtime="20231002 22:44:27.338"/>
+</kw>
+<tag>Cenario1</tag>
+<status status="PASS" starttime="20231002 22:44:12.484" endtime="20231002 22:44:27.338"/>
+</test>
+<test id="s1-t2" name="Funcionalidade: Buscar por iphone" line="22">
+<kw name="Abrir pagina" library="navegation.resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231002 22:44:27.342" level="INFO">Opening browser 'chrome' to base url 'https://kabum.com.br'.</msg>
+<status status="PASS" starttime="20231002 22:44:27.342" endtime="20231002 22:44:31.999"/>
+</kw>
+<status status="PASS" starttime="20231002 22:44:27.341" endtime="20231002 22:44:31.999"/>
+</kw>
+<kw name="Pesquisar por &quot;iphone&quot;" library="cenario2.resource" sourcename="Pesquisar por &quot;${produto}&quot;">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${search_bar}</arg>
 <arg>${produto}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231002 12:58:38.782" level="INFO">Typing text 'iphone' into text field '//*[@id="input-busca"]'.</msg>
-<status status="PASS" starttime="20231002 12:58:38.778" endtime="20231002 12:58:39.189"/>
+<msg timestamp="20231002 22:44:32.001" level="INFO">Typing text 'iphone' into text field '//*[@id='input-busca']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231002 22:44:32.007" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.132)
+</msg>
+<status status="FAIL" starttime="20231002 22:44:32.004" endtime="20231002 22:44:32.042"/>
 </kw>
-<status status="PASS" starttime="20231002 12:58:38.777" endtime="20231002 12:58:39.190"/>
+<msg timestamp="20231002 22:44:32.043" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.132)
+</msg>
+<msg timestamp="20231002 22:44:32.048" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.132)
+</msg>
+<status status="FAIL" starttime="20231002 22:44:32.000" endtime="20231002 22:44:32.049"/>
 </kw>
-<kw name="Clicar em pesquisar" library="kabum.resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${search_bar_button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231002 12:58:39.192" level="INFO">Clicking element '//*[@id="barraBuscaKabum"]/div/form/button'.</msg>
-<status status="PASS" starttime="20231002 12:58:39.191" endtime="20231002 12:58:43.585"/>
+<status status="FAIL" starttime="20231002 22:44:31.999" endtime="20231002 22:44:32.049"/>
 </kw>
-<status status="PASS" starttime="20231002 12:58:39.190" endtime="20231002 12:58:43.586"/>
+<kw name="Clicar em pesquisar" library="cenario2.resource">
+<status status="NOT RUN" starttime="20231002 22:44:32.064" endtime="20231002 22:44:32.064"/>
 </kw>
-<kw name="Verifica se lista de produtos relacionados e igual IPhone" library="kabum.resource" sourcename="Verifica se lista de produtos relacionados e igual ${produto}">
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>${category_block}</arg>
-<arg>${produto}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20231002 12:58:43.590" endtime="20231002 12:58:43.707"/>
+<kw name="Verifica se lista de produtos relacionados e igual IPhone" library="cenario2.resource" sourcename="Verifica se lista de produtos relacionados e igual ${produto}">
+<status status="NOT RUN" starttime="20231002 22:44:32.069" endtime="20231002 22:44:32.069"/>
 </kw>
-<status status="PASS" starttime="20231002 12:58:43.587" endtime="20231002 12:58:43.707"/>
+<kw name="Fechar o navegador" library="navegation.resource">
+<status status="NOT RUN" starttime="20231002 22:44:32.070" endtime="20231002 22:44:32.070"/>
 </kw>
-<kw name="Fechar o navegador" library="kabum.resource">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231002 12:58:43.708" endtime="20231002 12:58:46.081"/>
-</kw>
-<status status="PASS" starttime="20231002 12:58:43.707" endtime="20231002 12:58:46.082"/>
-</kw>
-<status status="PASS" starttime="20231002 12:58:20.898" endtime="20231002 12:58:46.082"/>
+<tag>Cenario2</tag>
+<status status="FAIL" starttime="20231002 22:44:27.340" endtime="20231002 22:44:32.072">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.132)
+</status>
 </test>
-<status status="PASS" starttime="20231002 12:58:20.459" endtime="20231002 12:58:46.085"/>
+<test id="s1-t3" name="Funcionalidade: Validar carrinho" line="30">
+<kw name="Abrir pagina" library="navegation.resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231002 22:44:32.084" level="INFO">Opening browser 'chrome' to base url 'https://kabum.com.br'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" starttime="20231002 22:44:34.996" endtime="20231002 22:44:34.996"/>
+</kw>
+<msg timestamp="20231002 22:44:34.996" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<status status="FAIL" starttime="20231002 22:44:32.083" endtime="20231002 22:44:34.998"/>
+</kw>
+<status status="FAIL" starttime="20231002 22:44:32.081" endtime="20231002 22:44:34.998"/>
+</kw>
+<kw name="Selecionar o departamento" library="cenario3.resource">
+<status status="NOT RUN" starttime="20231002 22:44:34.998" endtime="20231002 22:44:34.998"/>
+</kw>
+<kw name="Selecionar a categoria &quot;TV&quot;" library="cenario3.resource" sourcename="Selecionar a categoria ${categoria}">
+<status status="NOT RUN" starttime="20231002 22:44:34.999" endtime="20231002 22:44:34.999"/>
+</kw>
+<kw name="Clica no produto" library="cenario3.resource">
+<status status="NOT RUN" starttime="20231002 22:44:34.999" endtime="20231002 22:44:34.999"/>
+</kw>
+<kw name="Guardar nome do produto" library="cenario3.resource">
+<status status="NOT RUN" starttime="20231002 22:44:34.999" endtime="20231002 22:44:34.999"/>
+</kw>
+<kw name="Adiciona um produto no carrinho" library="cenario3.resource">
+<status status="NOT RUN" starttime="20231002 22:44:35.000" endtime="20231002 22:44:35.000"/>
+</kw>
+<kw name="A mensagem &quot;Produto adicionado com sucesso no carrinho&quot; é igual a esperada" library="cenario3.resource" sourcename="A mensagem &quot;${feedback_message_cart}&quot; é igual a esperada">
+<status status="NOT RUN" starttime="20231002 22:44:35.000" endtime="20231002 22:44:35.000"/>
+</kw>
+<kw name="Verifica se o carrinho possui 1 produto" library="cenario3.resource">
+<status status="NOT RUN" starttime="20231002 22:44:35.000" endtime="20231002 22:44:35.000"/>
+</kw>
+<kw name="Verifica se no carrinho o produto esta la" library="cenario3.resource">
+<status status="NOT RUN" starttime="20231002 22:44:35.000" endtime="20231002 22:44:35.000"/>
+</kw>
+<kw name="Fechar o navegador" library="navegation.resource">
+<status status="NOT RUN" starttime="20231002 22:44:35.001" endtime="20231002 22:44:35.001"/>
+</kw>
+<tag>Cenario3</tag>
+<status status="FAIL" starttime="20231002 22:44:32.077" endtime="20231002 22:44:35.001">Execution terminated by signal</status>
+</test>
+<doc>Executa os cenarios de testes</doc>
+<status status="FAIL" starttime="20231002 22:44:12.273" endtime="20231002 22:44:35.003"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">Cenario1</stat>
+<stat pass="0" fail="1" skip="0">Cenario2</stat>
+<stat pass="0" fail="1" skip="0">Cenario3</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Kabum">Kabum</stat>
+<stat pass="1" fail="2" skip="0" id="s1" name="Kabum">Kabum</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20231002 22:44:12.481" level="ERROR">Error in file 'C:\Users\matteusbonotto\Documents\github\kabum-challenge\testes_kabum\kabum.robot' on line 8: Processing variable file '../Resources/locators.resource.robot' failed: Importing variable file '../Resources/locators.resource.robot' failed: ModuleNotFoundError: No module named '.'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\matteusbonotto\AppData\Local\Programs\Python\Python36\Scripts\robot.exe
+  c:\users\matteusbonotto\appdata\local\programs\python\python36\python36.zip
+  c:\users\matteusbonotto\appdata\local\programs\python\python36\DLLs
+  c:\users\matteusbonotto\appdata\local\programs\python\python36\lib
+  c:\users\matteusbonotto\appdata\local\programs\python\python36
+  c:\users\matteusbonotto\appdata\local\programs\python\python36\lib\site-packages</msg>
+<msg timestamp="20231002 22:44:32.043" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=117.0.5938.132)
+</msg>
+<msg timestamp="20231002 22:44:34.996" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
 </errors>
 </robot>

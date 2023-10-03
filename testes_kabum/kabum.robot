@@ -1,6 +1,11 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource    kabum.resource.robot
+Documentation    Executa os cenarios de testes
+Library          SeleniumLibrary
+Resource         ../Resources/cenario1.resource.robot
+Resource         ../Resources/cenario2.resource.robot
+Resource         ../Resources/cenario3.resource.robot
+Resource         ../Resources/navegation.resource.robot
+Variables        ../Resources/locators.resource.robot
 
 *** Test Cases ***
 Funcionalidade: Validar login incorreto
@@ -11,7 +16,7 @@ Funcionalidade: Validar login incorreto
     Inserir senha
     Clicar em entrar
     Espere pela mensagem
-    A mensagem "E-mail, CPF, CNPJ ou senha incorretos" é igual a esperada
+    A mensagem E-mail, CPF, CNPJ ou senha incorretos é igual a esperada
     Fechar o navegador
 
 Funcionalidade: Buscar por iphone
@@ -28,5 +33,9 @@ Funcionalidade: Validar carrinho
     Selecionar o departamento
     Selecionar a categoria "TV"
     Clica no produto
+    Guardar nome do produto
     Adiciona um produto no carrinho
+    A mensagem "Produto adicionado com sucesso no carrinho" é igual a esperada
+    Verifica se o carrinho possui 1 produto
+    Verifica se no carrinho o produto esta la
     Fechar o navegador
