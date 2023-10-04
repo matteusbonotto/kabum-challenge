@@ -58,7 +58,7 @@ e outro para os recursos:
 - Resource/cenario2.resource.robot
 - Resource/cenario3.resource.robot
 - Resource/locators.py<br>
-- Resource/navegation.resource.robot)
+- Resource/navegation.resource.robot
   
 ou seja:
   
